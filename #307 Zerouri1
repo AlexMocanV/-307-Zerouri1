@@ -1,0 +1,45 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int long long n,i,x,y,nr2=0,nr5=0,p=1;
+    cin>>n;
+    for(i=1;i<=n;i++)
+    {
+        cin>>y;
+        
+        while(y%2==0)
+        {
+            nr2++;
+            y=y/2;
+        }
+        while(y%5==0)
+        {
+            nr5++;
+            y=y/5;
+        }
+        p=(y%10)*p;
+        if(p>=10)
+        {
+            
+            p=p%10;
+        }
+    }
+    while(nr2<nr5)
+    {
+        p=p*5;
+        p=p%10;
+        nr5--;
+    }
+    while(nr2>nr5)
+    {
+        p=p*2;
+        p=p%10;
+        nr2--;
+    }
+    cout<<p;
+    
+    return 0;
+}
